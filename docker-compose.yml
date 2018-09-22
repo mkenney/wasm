@@ -1,0 +1,12 @@
+version: '2'
+services:
+    wasm:
+        container_name: wasm
+        hostname: "wasm.local"
+        image: nginx:latest
+        ports:
+            - "80"
+        volumes:
+            - ./http:/usr/share/nginx/html
+            - ./default.conf:/etc/nginx/conf.d/default.conf
+        restart: always
